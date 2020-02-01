@@ -18,7 +18,9 @@ export default class GameBoard extends React.Component { //you have the class an
 
     handleClick(i) {
         const squares = this.state.squares.slice();
-        squares[i] = this.state.xIsNext ? 'X' : 'O';
+        if(squares[i] === null ) {
+            squares[i] = this.state.xIsNext ? 'X' : 'O';
+        }
         this.setState({
             squares: squares,
             xIsNext: !this.state.xIsNext,
@@ -50,7 +52,8 @@ render () {//A render method is: render = property, the below function is the va
 
     return (
 
-        <div>
+        <div className="container">
+        <div className="board">
 
             <div className="Row">
                 {this.eachSquare(0)}
@@ -71,7 +74,7 @@ render () {//A render method is: render = property, the below function is the va
             <GameInterface/>
 
         </div>
-
+        </div>
     );
 }
 
