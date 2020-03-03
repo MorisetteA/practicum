@@ -7,7 +7,7 @@ export default function GameTitle (props) {
 
         return (
             <header>
-                <h1>Tic Tac Toe</h1>
+                <h1 className= "H1">Tic Tac Toe</h1>
                 <GameBoard/>
             </header>
         );
